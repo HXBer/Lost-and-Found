@@ -1,0 +1,24 @@
+
+<view class="index">
+    
+    <view class="index-top">
+        <view style='background-color:#8f202e'>
+          <image class="index-logo" src="../../image/logo.png"></image>
+          <!--搜索框-->
+          <view class='page_row' style='background-color:#8f202e' bindtap="suo">
+              <view class="search">
+                  <view class="search-arr"  style='background-color:white'>
+                      <icon class="search-cion" size='18' type='search'></icon>
+                      <input clsaa="searxh-text" placeholder="搜索"/>
+                  </view>
+              </view>
+          </view>
+        </view>
+    </view>
+    
+
+
+
+
+
+</view>

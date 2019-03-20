@@ -1,0 +1,10 @@
+.index-top
+{
+  display: flex;
+  flex-direction: column;
+}
+.index-logo 
+{
+  width: 100%;
+  height: 130rpx;
+}
