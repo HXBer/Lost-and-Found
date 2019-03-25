@@ -1,7 +1,7 @@
 
 <view class="index">
     
-    <view class="index-column">
+    <view class="index-column"> <!--index-top-->
         <!--chunk1-->
         <!--background-color-->
         <view style='background-color:#8f202e'>
@@ -11,7 +11,7 @@
                <image class="index-logo" src="../../image/logo.png"></image>
             </view>
             
-            <!--搜索框-->
+            <!--搜索框--> 
             <view class='page_row' style='background-color:#8f202e' bindtap="suo">
                 <view class="search">
                     <view class="search_arr"  style='background-color:white'>

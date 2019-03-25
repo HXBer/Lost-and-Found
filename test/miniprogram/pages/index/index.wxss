@@ -28,7 +28,7 @@
   border: 1px solid #d0d0d0;
   border-radius: 10rpx;
   margin-left: 20rpx;
-}/*搜索框样式*/
+}/*搜索框样�?*/
 .search_arr input{
   margin-left: 60rpx;
   height: 60rpx;

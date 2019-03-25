@@ -1,0 +1,18 @@
+<view class="index">
+    
+  <view class="index-top">
+    <view style='background-color:#8f202e'>
+      <!--logo-->
+      <view class="index-head" style='background-color:#8f202e'>
+        <image class="index-logo" src="../../image/logo.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <!--位置-->
+  <picker bindchange="bindAddrChange" value="{{addr_n}}" range="{{addr_array}}">
+    <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
+  </picker>
+  <input type="number"></input>
+</view>
