@@ -1,11 +1,9 @@
 {
-  "pages": 
-  [
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/add/add"
   ],
-  "window": 
-  {
-    "navigationStyle": "/image/logo.png",
+  "window": {
     "navigationStyle": "custom"
   }
 }
