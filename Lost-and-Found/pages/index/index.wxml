@@ -7,7 +7,7 @@
         <image class="index-logo" src="../../image/logo.png"></image>
       </view>
       <!--搜索框-->
-      <view class='index-row' style='background-color:#8f202e' ><!--事件bindtap="suo"-->
+      <view class='index-row' style='background-color:#8f202e' >
           <view class="search">
               <view class="search-arr"  style='background-color:white'>
                   <icon class="search-cion" size='18' type='search'></icon>
@@ -32,7 +32,7 @@
 
       <!--升降序-->
       <picker bindchange="bindPickerChange" value="{{data_n}}" range="{{array}}">
-        <view class='sort-size' style='width:110rpx;height:50rpx'>{{array[data_n]}}</view>
+        <view class='choose-size' style='width:130rpx;height:50rpx'>{{array[data_n]}}</view>
       </picker>
 
       <view style="color:#000000">|</view>
@@ -58,7 +58,7 @@
       <view>{{item.thing_name}}</view>
       <view>{{item.thing_time}}</view>
       <view>{{item.thing_addr}}</view>
-      <view>{{item.thing_dessc}}</view>
+      <view>{{item.thing_desc}}</view>
     </view>
   </view>
 

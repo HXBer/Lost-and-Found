@@ -1,18 +1,44 @@
-<view class="index">
+<view class='add_index'>
     
-  <view class="index-top">
-    <view style='background-color:#8f202e'>
-      <!--logo-->
-      <view class="index-head" style='background-color:#8f202e'>
-        <image class="index-logo" src="../../image/logo.png"></image>
+  <view class='add-top'>
+    <image class='add-logo' src='../../image/logo.png'></image>
+    <view style='height:80rpx;background-color:#8f202e'>
+      <view bindtap='back'><!-->后退按钮<-->
+        <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
       </view>
     </view>
   </view>
-</view>
-<view>
-  <!--位置-->
-  <picker bindchange="bindAddrChange" value="{{addr_n}}" range="{{addr_array}}">
-    <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
-  </picker>
-  <input type="number"></input>
+
+
+  <form bindsubmit="formSubmit">
+
+    <view class='mid-time'>时间
+      <picker mode='date' name='time'value='{{date}}' start='2017-09-1' end='2018-9-1' bindchange='bindDateChange'>
+        <view class='time-size' style='width:160rpx;height:50rpx'>{{date}}</view>
+      </picker>
+    </view>
+
+    <view class='mid-time'>地点
+      <picker bindchange='bindAddrChange' value='{{addr_n}}' range='{{addr_array}}'>
+        <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
+      </picker>
+    </view>
+
+    <view class='mid-time'>物品类型
+      <picker bindchange='bindTypeChange' value='{{type_n}}' range='{{type_array}}'>
+          <view class='choose-size' style='width:130rpx;height:50rpx'>{{type_array[type_n]}}</view>
+      </picker>
+    </view>
+
+    <view class='mid-time'>物品描述
+      <input type='test' name='desc' placeholder='输入物品描述' confirm-type='done'></input>
+    </view>
+  
+    <view class='add-bot' style='background-color:#FFFFFF'>
+      <image class='submit-cion'src='../../image/submit.png' ></image>
+      <button class='button-submit' formType="submit">提交</button>
+    </view>
+  </form>
+
+    
 </view>

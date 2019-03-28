@@ -52,9 +52,9 @@
 }
 .sort-size
 {
-    margin: 14rpx -7rpx 0rpx 0rpx;
+    margin: 20rpx -7rpx 0rpx 0rpx;
     text-align: center;
-    font-size:27rpx;
+    font-size:30rpx;
     color:#555; 
 }
 .time-size
@@ -96,9 +96,7 @@
   fixed;
   width:42px;
   height:42px;
-  bottom:
-  30px;
-  right:
-  20px;
+  bottom:30px;
+  right:20px;
 }
 

@@ -1,2 +1,50 @@
 /* pages/add/add.wxss */
 @import "../index/index.wxss";
+.add-top
+{
+  display: flex;
+  flex-direction: column;
+}
+.add-logo 
+{
+  width: 100%;
+  height: 130rpx;
+}
+.submit-cion
+{
+  height:6%;
+  width:100%;
+  position: absolute;
+  bottom:0%;
+}
+
+.add-mid
+{
+  text-align: center;
+}
+
+.mid-time
+{
+  display:flex;
+  text-align: center;
+  font-size:40rpx;
+  margin: 120rpx 0rpx 0rpx 100rpx;
+}
+.button-submit
+{
+  color:white;
+  width:20%; 
+  height:6%; 
+  background-color:#61d46f; 
+  left:78%; 
+  bottom:0%; 
+  position: absolute;
+}
+button::after 
+{
+  border: none
+}
+.plain {
+  border: none;
+  border-color: transparent;
+}
