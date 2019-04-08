@@ -1,10 +1,12 @@
 <view class='add_index'>
-    
+
   <view class='add-top'>
     <image class='add-logo' src='../../image/logo.png'></image>
     <view style='height:80rpx;background-color:#8f202e'>
-      <view bindtap='back'><!-->后退按钮<-->
-        <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
+      <view bindtap='back'>
+        <!-->后退按钮
+        <-->
+          <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
       </view>
     </view>
   </view>
@@ -12,33 +14,48 @@
 
   <form bindsubmit="formSubmit">
 
-    <view class='mid-time'>时间
-      <picker mode='date' name='time'value='{{date}}' start='2017-09-1' end='2018-9-1' bindchange='bindDateChange'>
+    <view class='mid'>时间
+      <picker mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1' bindchange='bindDateChange'>
         <view class='time-size' style='width:160rpx;height:50rpx'>{{date}}</view>
       </picker>
     </view>
 
-    <view class='mid-time'>地点
-      <picker bindchange='bindAddrChange' value='{{addr_n}}' range='{{addr_array}}'>
+    <view class='mid'>地点
+      <picker bindchange='bindAddrChange' name='addr' value='{{addr_n}}' range='{{addr_array}}'>
         <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
       </picker>
     </view>
 
-    <view class='mid-time'>物品类型
-      <picker bindchange='bindTypeChange' value='{{type_n}}' range='{{type_array}}'>
-          <view class='choose-size' style='width:130rpx;height:50rpx'>{{type_array[type_n]}}</view>
+    <view class='mid'>物品类型
+      <picker bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
+        <view class='choose-size' style='width:130rpx;height:50rpx'>{{type_array[type_n]}}</view>
       </picker>
     </view>
 
-    <view class='mid-time'>物品描述
+    <view class='mid'>物品描述
       <input type='test' name='desc' placeholder='输入物品描述' confirm-type='done'></input>
     </view>
-  
+
+    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="chooseImage" wx:if="{{images.length < 3}}">
+    </button>
+
+    <view class="question-images">
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+        </view>
+      </block>
+    </view>
+
+
     <view class='add-bot' style='background-color:#FFFFFF'>
-      <image class='submit-cion'src='../../image/submit.png' ></image>
+      <image class='submit-cion' src='../../image/submit.png'></image>
       <button class='button-submit' formType="submit">提交</button>
     </view>
   </form>
 
-    
+
 </view>

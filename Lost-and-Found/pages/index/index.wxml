@@ -1,6 +1,6 @@
-<view class="index">
+<view class="index" >
     
-  <view class="index-top">
+  <view class="index-top" style="position:fixed;top:0;">
     <view style='background-color:#8f202e'>
       <!--logo-->
       <view class="index-head" style='background-color:#8f202e'>
@@ -21,7 +21,7 @@
   </view>
 
   <!--日期选择-->
-  <view class="index-top-plus"style='background-color:#FFFFFF;'>
+  <view class="index-top-plus"style='background-color:#FFFFFF;' style="position:fixed;top:220rpx;">
       <picker mode="date" value="{{date}}" start="2017-09-1" end="2018-9-1" bindchange="bindDateChange">
           <view class='time-size' style='width:160rpx;height:50rpx'>{{date}}</view>
       </picker>
@@ -52,14 +52,14 @@
 
 
   <view class='index-mid' style='background-color:#FFFFFF'>
-    <view wx:for="{{re}}" wx:key="re" class="search_result">
+    <scroll-view wx:for="{{re}}" wx:key="re" class="search_result">
       <view>{{item.thing_id}}</view>
       <view>{{item.thing_type}}</view>
       <view>{{item.thing_name}}</view>
       <view>{{item.thing_time}}</view>
       <view>{{item.thing_addr}}</view>
       <view>{{item.thing_desc}}</view>
-    </view>
+    </scroll-view>
   </view>
 
   <view class='index-bot' style='background-color:#FFFFFF'>

@@ -23,12 +23,12 @@
   text-align: center;
 }
 
-.mid-time
+.mid
 {
   display:flex;
   text-align: center;
   font-size:40rpx;
-  margin: 120rpx 0rpx 0rpx 100rpx;
+  margin: 80rpx 0rpx 0rpx 100rpx;
 }
 .button-submit
 {
@@ -47,4 +47,11 @@ button::after
 .plain {
   border: none;
   border-color: transparent;
+}
+
+.photo-add
+{
+  width:110rpx;
+  height:110rpx;
+  margin: 250rpx 0rpx 0rpx 100rpx;
 }
