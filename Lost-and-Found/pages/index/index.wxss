@@ -75,7 +75,6 @@
 }
 
 .search_result {
- display: flex;
   padding:2cm 4cm 3cm 4cm;
   flex-direction: column;
   overflow: hidden; 
