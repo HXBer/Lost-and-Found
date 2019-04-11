@@ -43,7 +43,7 @@
     <!-- 分割线 -->
   </view>
   <!-- mid -->
-  <view style='display:flex; position:relative; width:100%; height:1050rpx; top:290rpx'>
+  <view style='display:inline; position:relative; width:100%; height:1050rpx; top:290rpx'>
     <scroll-view scroll-y='true' scroll-top='400' class='index-mid'>
       <view wx:for='{{re}}' wx:key='re' class='search_result' style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
         <!-- >
@@ -51,16 +51,23 @@
           {{item.thing_time}}
           {{item.thing_addr}}
           {{item.thing_desc}}<! -->
-        <view>
-          <image src="../../image/text1.jpg" style='height:160rpx;width:160rpx'/>
-          
+        <view style='display:flex;'>
+          <image src='../../image/text1.jpg' style='height:160rpx;width:160rpx' />
+          <view style='height:204rpx;width:330rpx;'>
+            <view style="padding: 0 0 0 60rpx;">{{item.thing_name}}</view>
+          </view>
+          <view style='font-size:13px;flex-direction: column;'>
+            <view>■{{item.thing_time}}</view>
+            <view>■{{item.thing_type}}</view>
+            <view>■{{item.thing_addr}}</view>
+          </view>
         </view>
       </view>
     </scroll-view>
   </view>
   <view class='index-bot' style='background-color:#FFFFFF'>
     <view bindtap='add'>
-      <image class='add' src='../../image/add.png'/>
+      <image class='add' src='../../image/add.png' />
     </view>
   </view>
 </view>
