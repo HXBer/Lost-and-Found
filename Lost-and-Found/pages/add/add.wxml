@@ -36,21 +36,9 @@
       <input type='test' name='desc' placeholder='输入物品描述' confirm-type='done'></input>
     </view>
 
-    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="chooseImage" wx:if="{{images.length < 3}}">
+    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" >
     </button>
-
-    <view class="question-images">
-      <block wx:for="{{images}}" wx:key="*this">
-        <view class="q-image-wrap">
-          <!-- 图片缩略图  -->
-          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
-          <!-- 移除图片的按钮  -->
-          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
-        </view>
-      </block>
-    </view>
-
-
+    
     <view class='add-bot' style='background-color:#FFFFFF'>
       <image class='submit-cion' src='../../image/submit.png'></image>
       <button class='button-submit' formType="submit">提交</button>
