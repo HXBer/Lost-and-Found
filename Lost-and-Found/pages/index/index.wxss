@@ -75,7 +75,7 @@
 }
 
 .search_result {
-  padding:2cm 4cm 3cm 4cm;
+  padding:50rpx 0rpx 150rpx 250rpx;
   flex-direction: column;
   overflow: hidden; 
 }
@@ -104,4 +104,18 @@
   height: 42px;
   bottom: 30px;
   right: 20px;
+}
+.image-lost{
+  left: 0rpx;
+}
+.time-lost{
+  margin: 3rem -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+.addr-lost{
+  margin: 10rpx -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+.name-lost{
+  padding: 15rpx;
 }

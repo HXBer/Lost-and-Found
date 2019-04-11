@@ -1,49 +1,58 @@
 <view class='add_index'>
-
   <view class='add-top'>
     <image class='add-logo' src='../../image/logo.png'></image>
     <view style='height:80rpx;background-color:#8f202e'>
       <view bindtap='back'>
-        <!-->后退按钮
-        <-->
-          <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
+        <!-- >后退按钮
+        < -->
+        <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
       </view>
     </view>
   </view>
-
-
   <form bindsubmit="formSubmit">
-
-    <view class='mid'>时间
+    <view class='mid'>
+      <view class='add-left'>物品</view>
+      <input name='name' placeholder='输入物品' class='add-right' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
+    </view>
+    <view class='mid'>
+      <view class='add-left'>时间</view>
       <picker mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1' bindchange='bindDateChange'>
-        <view class='time-size' style='width:160rpx;height:50rpx'>{{date}}</view>
+        <view class='time-size' class='add-right'>
+          {{date}}
+        </view>
       </picker>
     </view>
-
-    <view class='mid'>地点
+    <view class='mid'>
+      <view class='add-left'>地点</view>
       <picker bindchange='bindAddrChange' name='addr' value='{{addr_n}}' range='{{addr_array}}'>
-        <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
+        <view class='add-right'>
+          {{addr_array[addr_n]}}
+        </view>
       </picker>
     </view>
-
-    <view class='mid'>物品类型
-      <picker bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
-        <view class='choose-size' style='width:130rpx;height:50rpx'>{{type_array[type_n]}}</view>
+    <view class='mid'>
+      <view class='add-left'>物品类型</view>
+      <picker bindchange='bindTypeChange' name='type' value='{{type_n}}' style='left:130rpx;' range='{{type_array}}'>
+        <view class='add-right'>
+          {{type_array[type_n]}}
+        </view>
       </picker>
     </view>
-
-    <view class='mid'>物品描述
-      <input type='test' name='desc' placeholder='输入物品描述' confirm-type='done'></input>
+    <view class='mid'>
+      <view class='add-left'>联系方式</view>
+      <input name='coninfo' maxlength='15'placeholder='输入联系方式' style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
     </view>
-
-    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" >
-    </button>
-    
+    <view class='mid'>
+      <view class='add-left'>详细描述</view>
+      <textarea name='desc'maxlength='30'class='test' placeholder='输入详细描述' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></textarea>
+    </view>
+    <!-- 上传图片 -->
+    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgUpload"></button>
+    <image src='{{img}}' style='position:fixed;top:900rpx;left:300rpx;width:200rpx; height:200rpx' />
+    <!-- 提交 -->
     <view class='add-bot' style='background-color:#FFFFFF'>
       <image class='submit-cion' src='../../image/submit.png'></image>
       <button class='button-submit' formType="submit">提交</button>
     </view>
   </form>
-
-
 </view>

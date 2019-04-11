@@ -1,61 +1,81 @@
 // pages/add/add.js
 const app = getApp()
 Page({
-  
+
   /**
    * 页面的初始数据
    */
-  data: 
-  {
-    date:'时间',
-    addr_n:0,
-    type_n:0,
+  data: {
+    date: '时间',
+    addr_n: 0,
+    type_n: 0,
+    name: '',
     addr_array: ['位置', '教学楼', '精工园', '图书馆', '宿舍楼', '其他'],
-    type_array: ['类型', '卡', '包', '书', '电子产品','伞', '其他'],
-    desc:'',
+    type_array: ['类型', '卡', '包', '书', '电子产品', '伞', '其他'],
+    desc: '',
+    img: '',
+    coninfo:'',
   },
+  imgUpload: function () {
+    var that = this;
+    wx.chooseImage({ //从本地相册选择图片或使用相机拍照
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        //console.log(res)
+        //前台显示
+        that.setData({
+          img: res.tempFilePaths//返回前台{{img}}
+        })
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://white.xmutsec.com/test/test.php',
+          filePath: tempFilePaths[0],
+          name: 'file',
 
-  back:function()
-  {
-   wx.navigateBack()
+          success: function (res) {
+            //打印
+            console.log(res.data)
+          }
+        })
+
+      }
+    })
+  },
+  back: function () {
+    wx.navigateBack()
     {
       delta: 1;
     }
   },
 
-  bindDateChange: function (e)
-  {
-    this.setData
-      ({
-        date: e.detail.value
-      })
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
   },
 
-  bindAddrChange: function (e) 
-  {
-    this.setData
-      ({
-        addr_n: e.detail.value
-      })
+  bindAddrChange: function (e) {
+    this.setData({
+      addr_n: e.detail.value
+    })
   },
 
-  bindTypeChange: function (e) 
-  {
-    this.setData
-      ({
-        type_n: e.detail.value
-      })
+  bindTypeChange: function (e) {
+    this.setData({
+      type_n: e.detail.value
+    })
   },
 
-  onLoad: function () 
-  {
+  onLoad: function () {
     // 调用函数时，传入new Date()参数，返回值是日期
     var time = formatTime(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
-    this.setData
-      ({
-        time: time
-      });
+    this.setData({
+      time: time
+    });
   },
 
 
@@ -68,10 +88,12 @@ Page({
     //获取表单所有name=keyword的值
     var addr_array = ['位置', '教学楼', '精工园', '图书馆', '宿舍楼', '其他'];
     var type_array = ['类型', '卡', '包', '书', '电子产品', '伞', '其他'];
+    var name = e.detail.value.name;
     var desc = e.detail.value.desc;
     var time = e.detail.value.time;
     var type = type_array[e.detail.value.type];
     var addr = addr_array[e.detail.value.addr];
+    var coninfo = e.detail.value.coninfo;
     //显示搜索中的提示
     wx.showLoading({
       title: '搜索中',
@@ -82,7 +104,7 @@ Page({
     wx.request({
 
       //URL
-      url: 'https://white.xmutsec.com/test/insert.php?desc=' + desc +'&time=' + time + '&type=' + type+ '&addr=' + addr ,
+      url: 'https://white.xmutsec.com/test/insert.php?name=' + name + '&desc=' + desc + '&time=' + time + '&type=' + type + '&addr=' + addr + '&coninfo=' + coninfo,
 
       //发送的数据
       //data: desc,time,addr,
@@ -112,7 +134,7 @@ Page({
 
 })
 
-  
+
 
 /*获取当前日期*/
 function formatTime(date) {
@@ -132,7 +154,6 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-module.exports =
-{
+module.exports = {
   formatTime: formatTime
 }
