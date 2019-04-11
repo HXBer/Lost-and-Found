@@ -44,27 +44,23 @@
   </view>
   <!-- mid -->
   <view style='display:flex; position:relative; width:100%; height:1050rpx; top:290rpx'>
-    <!-- 展示区 -->
     <scroll-view scroll-y='true' scroll-top='400' class='index-mid'>
-      <view wx:for='{{re}}' wx:key='re' class='search_result' style='position:relative;left:-200rpx; width:100%; height:0rpx;'>
+      <view wx:for='{{re}}' wx:key='re' class='search_result' style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
         <!-- >
           {{item.thing_type}}
           {{item.thing_time}}
           {{item.thing_addr}}
-          {{item.thing_desc}}< -->
-        <!-- 图片区 -->
+          {{item.thing_desc}}<! -->
         <view>
-          <image src="../../image/text1.jpg" style='height:160rpx;width:160rpx' />
+          <image src="../../image/text1.jpg" style='height:160rpx;width:160rpx'/>
+          
         </view>
-        <!-- name -->
-        <text>{{item.thing_name}}</text>
-        <!-- time&addr -->
       </view>
     </scroll-view>
   </view>
   <view class='index-bot' style='background-color:#FFFFFF'>
     <view bindtap='add'>
-      <image class='add' src='../../image/add.png' />
+      <image class='add' src='../../image/add.png'/>
     </view>
   </view>
 </view>
