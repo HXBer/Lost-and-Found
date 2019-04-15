@@ -12,39 +12,33 @@
   <form bindsubmit="formSubmit">
     <view class='mid'>
       <view class='add-left'>物品</view>
-      <input name='name' placeholder='输入物品' class='add-right' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
+      <input class='add-right' name='name' placeholder='输入物品' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
     </view>
     <view class='mid'>
       <view class='add-left'>时间</view>
-      <picker mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1' bindchange='bindDateChange'>
-        <view class='time-size' class='add-right'>
-          {{date}}
-        </view>
+      <picker bindchange='bindDateChange' mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1'>
+        <view class='time-size' class='add-right'>{{date}}</view><!--修改-->
       </picker>
     </view>
     <view class='mid'>
       <view class='add-left'>地点</view>
       <picker bindchange='bindAddrChange' name='addr' value='{{addr_n}}' range='{{addr_array}}'>
-        <view class='add-right'>
-          {{addr_array[addr_n]}}
-        </view>
+        <view class='add-right'>{{addr_array[addr_n]}}</view>
       </picker>
     </view>
     <view class='mid'>
       <view class='add-left'>物品类型</view>
-      <picker bindchange='bindTypeChange' name='type' value='{{type_n}}' style='left:130rpx;' range='{{type_array}}'>
-        <view class='add-right'>
-          {{type_array[type_n]}}
-        </view>
+      <picker  style='left:130rpx;' bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
+        <view class='add-right'>{{type_array[type_n]}}</view>
       </picker>
     </view>
     <view class='mid'>
       <view class='add-left'>联系方式</view>
-      <input name='coninfo' maxlength='15'placeholder='输入联系方式' style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
+      <input style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' name='coninfo' maxlength='15' placeholder='输入联系方式' confirm-type='done'></input>
     </view>
     <view class='mid'>
       <view class='add-left'>详细描述</view>
-      <textarea name='desc'maxlength='30'class='test' placeholder='输入详细描述' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></textarea>
+      <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30'  placeholder='输入详细描述' confirm-type='done'></textarea>
     </view>
     <!-- 上传图片 -->
     <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgUpload"></button>
