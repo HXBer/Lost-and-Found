@@ -41,7 +41,7 @@
       <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30'  placeholder='输入详细描述' confirm-type='done'></textarea>
     </view>
     <!-- 上传图片 -->
-    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgUpload"></button>
+    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgPicker"></button>
     <image src='{{img}}' style='position:fixed;top:1000rpx;left:300rpx;width:150rpx; height:150rpx' />
     <!-- 提交 -->
     <view class='add-bot' style='background-color:#FFFFFF'>
