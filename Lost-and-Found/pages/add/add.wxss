@@ -52,7 +52,7 @@ button::after {
 .photo-add {
   width: 110rpx;
   height: 110rpx;
-  margin: 50rpx 0rpx 0rpx 100rpx;
+  margin: 150rpx 0rpx 0rpx 100rpx;
 }
 
 .add-left {

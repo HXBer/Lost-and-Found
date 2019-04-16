@@ -42,7 +42,7 @@
     </view>
     <!-- 上传图片 -->
     <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgUpload"></button>
-    <image src='{{img}}' style='position:fixed;top:900rpx;left:300rpx;width:200rpx; height:200rpx' />
+    <image src='{{img}}' style='position:fixed;top:1000rpx;left:300rpx;width:150rpx; height:150rpx' />
     <!-- 提交 -->
     <view class='add-bot' style='background-color:#FFFFFF'>
       <image class='submit-cion' src='../../image/submit.png'></image>
