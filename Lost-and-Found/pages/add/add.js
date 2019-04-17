@@ -18,13 +18,13 @@ Page({
     img: '',
     coninfo: '',
   },
-  imgPicker: function() {
+  imgPicker: function () {
     var that = this;
     wx.chooseImage({ //从本地相册选择图片或使用相机拍照
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
+      success: function (res) {
         //console.log(res)
         //前台显示
         that.setData({
@@ -34,35 +34,35 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
 
       },
-      
+
     })
   },
-  back: function() {
-    wx.navigateBack() 
+  back: function () {
+    wx.navigateBack()
     {
       delta: 1;
     }
   },
 
-  bindDateChange: function(e) {
+  bindDateChange: function (e) {
     this.setData({
       date: e.detail.value
     })
   },
 
-  bindAddrChange: function(e) {
+  bindAddrChange: function (e) {
     this.setData({
       addr_n: e.detail.value
     })
   },
 
-  bindTypeChange: function(e) {
+  bindTypeChange: function (e) {
     this.setData({
       type_n: e.detail.value
     })
   },
 
-  onLoad: function() {
+  onLoad: function () {
     // 调用函数时，传入new Date()参数，返回值是日期
     var time = formatTime(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
@@ -73,7 +73,7 @@ Page({
 
 
 
-  formSubmit: function(e) {
+  formSubmit: function (e) {
 
     //声明当天执行的
     var that = this;
@@ -92,23 +92,37 @@ Page({
       title: '搜索中',
       icon: 'loading'
     })
-
+    var tempFilePaths = test
     //向搜索后端服务器发起请求
-    wx.request({
+    wx.uploadFile({
 
       //URL
-      url: 'https://white.xmutsec.com/test/insert.php?name=' + name + '&desc=' + desc + '&time=' + time + '&type=' + type + '&addr=' + addr + '&coninfo=' + coninfo,
-
-      //发送的数据
-      //data: desc,time,addr,
-
-      //请求的数据时JSON格式
+      //url: 'https://white.xmutsec.com/test/insert.php?name=' + name + '&desc=' + desc + '&time=' + time + '&type=' + type + '&addr=' + addr + '&coninfo=' + coninfo,
+      url: 'https://white.xmutsec.com/test/insert.php',
+      //method: "POST",
+      filePath: tempFilePaths[0],
+      name: 'file',
+      formData: {
+        name: name,
+        desc: desc,
+        time: time,
+        type: type,
+        addr: addr,
+        coninfo: coninfo,
+        
+      },
+      
+/*    
+      success: function (res) {
+        //打印
+        console.log(res.data)
+      },*/
       header: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
 
       //请求成功
-      success: function(res) {
+      success: function (res) {
 
         //控制台打印（开发调试用）
         console.log(res.data)
@@ -122,18 +136,7 @@ Page({
         wx.hideLoading();
       }
     })
-    
-      var tempFilePaths = test
-      wx.uploadFile({
-        url: 'https://white.xmutsec.com/test/test.php',
-        filePath: tempFilePaths[0],
-        name: 'file',
 
-        success: function (res) {
-          //打印
-          console.log(res.data)
-        }
-      })
 
   },
 

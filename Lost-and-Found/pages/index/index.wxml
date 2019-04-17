@@ -49,7 +49,7 @@
     <scroll-view class='index-mid' scroll-y='true' scroll-top='400'>
       <view class='search_result' wx:for='{{re}}' wx:key='re' style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
         <view style='display:flex;'>
-          <image src='../../image/text1.jpg' style='height:160rpx;width:160rpx' />
+          <image src='https://white.xmutsec.com/upload/{{item.thing_photo}}' style='height:160rpx;width:160rpx' />
           <view style='height:204rpx;width:330rpx;'>
             <view style="padding: 0 0 0 60rpx;">{{item.thing_name}}</view>
           </view>

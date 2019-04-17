@@ -37,7 +37,7 @@
       <input style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' name='coninfo' maxlength='15' placeholder='输入联系方式' confirm-type='done'></input>
     </view>
     <view class='mid'>
-      <view class='add-left'>详细描述</view>
+      <view class='add-l  eft'>详细描述</view>
       <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30'  placeholder='输入详细描述' confirm-type='done'></textarea>
     </view>
     <!-- 上传图片 -->
