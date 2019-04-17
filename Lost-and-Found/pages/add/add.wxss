@@ -1,2 +1,77 @@
 /* pages/add/add.wxss */
+
 @import "../index/index.wxss";
+.add-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-logo {
+  width: 100%;
+  height: 130rpx;
+}
+
+.submit-cion {
+  height: 6%;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+}
+
+.add-mid {
+  text-align: center;
+}
+
+.mid {
+  display: flex;
+  text-align: center;
+  font-size: 40rpx;
+  margin: 50rpx 0rpx 0rpx 100rpx;
+  height: 64rpx;
+}
+
+.button-submit {
+  color: white;
+  width: 20%;
+  height: 6%;
+  background-color: #61d46f;
+  left: 78%;
+  bottom: 0%;
+  position: absolute;
+}
+
+button::after {
+  border: none
+}
+
+.plain {
+  border: none;
+  border-color: transparent;
+}
+
+.photo-add {
+  width: 110rpx;
+  height: 110rpx;
+  margin: 150rpx 0rpx 0rpx 100rpx;
+}
+
+.add-left {
+  text-align: left;
+  left: 0;
+  width: 160rpx;
+  height: 64rpx;
+}
+
+.add-right {
+  font-size:15px;
+  color: darkgrey;
+  right:0rpx;
+  width:440rpx;
+  height:64rpx
+}
+.test
+{
+  left:30rpx;
+  width: 400rpx;
+  height: 192rpx;
+}

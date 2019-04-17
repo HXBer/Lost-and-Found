@@ -7,9 +7,9 @@ Page
       array: ['升序', '降序'],
       data_n: 0,
       addr_n: 0,
-      type_n:0,
-      addr_array:['位置','教学楼','精工园','图书馆','宿舍楼'],
-      type_array:['类型','卡','包','书','电子产品','文具','伞','其他'],
+      type_n: 0,
+      addr_array:['位置','教学楼','精工园','图书馆','宿舍楼','其他'],
+      type_array:['类型','卡','包','书','电子产品','伞','其他'],
       search_result:'',
     },
 
@@ -59,13 +59,14 @@ Page
     formSubmit: function (e) 
     {
       var that = this;
-      var formData = parseInt(e.detail.value);
+      var formData = e.detail.value;
       this.setData
-        ({
-          keyword: formData,
-        })
-      wx.request({
-        url: 'http://white.xmutsec.com/test/fuck.php?keyword=' + formData,
+      ({
+        keyword: formData,
+      })
+      wx.request
+      ({
+        url: 'https://white.xmutsec.com/test/select.php?keyword=' + formData,
         data: formData,
         header: { 'Content-Type': 'application/json' },
         success: function (res) 
@@ -84,13 +85,11 @@ Page
         }
       })
     },
-    add: function () 
-    {
-      wx.navigateTo
-      ({
+    add: function () {
+      wx.navigateTo({
         url: '../add/add'
       })
-    },
+    }
 
 })
 

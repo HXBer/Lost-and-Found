@@ -1,18 +1,52 @@
-<view class="index">
-    
-  <view class="index-top">
-    <view style='background-color:#8f202e'>
-      <!--logo-->
-      <view class="index-head" style='background-color:#8f202e'>
-        <image class="index-logo" src="../../image/logo.png"></image>
+<view class='add_index'>
+  <view class='add-top'>
+    <image class='add-logo' src='../../image/logo.png'></image>
+    <view style='height:80rpx;background-color:#8f202e'>
+      <view bindtap='back'>
+        <!-- >后退按钮
+        < -->
+        <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
       </view>
     </view>
   </view>
-</view>
-<view>
-  <!--位置-->
-  <picker bindchange="bindAddrChange" value="{{addr_n}}" range="{{addr_array}}">
-    <view class='choose-size' style='width:130rpx;height:50rpx'>{{addr_array[addr_n]}}</view>
-  </picker>
-  <input type="number"></input>
+  <form bindsubmit="formSubmit">
+    <view class='mid'>
+      <view class='add-left'>物品</view>
+      <input class='add-right' name='name' placeholder='输入物品' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
+    </view>
+    <view class='mid'>
+      <view class='add-left'>时间</view>
+      <picker bindchange='bindDateChange' mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1'>
+        <view class='time-size' class='add-right'>{{date}}</view><!--修改-->
+      </picker>
+    </view>
+    <view class='mid'>
+      <view class='add-left'>地点</view>
+      <picker bindchange='bindAddrChange' name='addr' value='{{addr_n}}' range='{{addr_array}}'>
+        <view class='add-right'>{{addr_array[addr_n]}}</view>
+      </picker>
+    </view>
+    <view class='mid'>
+      <view class='add-left'>物品类型</view>
+      <picker  style='left:130rpx;' bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
+        <view class='add-right'>{{type_array[type_n]}}</view>
+      </picker>
+    </view>
+    <view class='mid'>
+      <view class='add-left'>联系方式</view>
+      <input style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' name='coninfo' maxlength='15' placeholder='输入联系方式' confirm-type='done'></input>
+    </view>
+    <view class='mid'>
+      <view class='add-l  eft'>详细描述</view>
+      <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30'  placeholder='输入详细描述' confirm-type='done'></textarea>
+    </view>
+    <!-- 上传图片 -->
+    <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgPicker"></button>
+    <image src='{{img}}' style='position:fixed;top:1000rpx;left:300rpx;width:150rpx; height:150rpx' />
+    <!-- 提交 -->
+    <view class='add-bot' style='background-color:#FFFFFF'>
+      <image class='submit-cion' src='../../image/submit.png'></image>
+      <button class='button-submit' formType="submit">提交</button>
+    </view>
+  </form>
 </view>
