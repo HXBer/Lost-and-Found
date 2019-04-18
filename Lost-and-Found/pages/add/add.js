@@ -3,10 +3,6 @@ const app = getApp()
 var test
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     date: '时间',
     addr_n: 0,
@@ -74,10 +70,8 @@ Page({
 
 
   formSubmit: function (e) {
-
-    //声明当天执行的
+    //声明当前执行的
     var that = this;
-
     //获取表单所有name=keyword的值
     var addr_array = ['位置', '教学楼', '精工园', '图书馆', '宿舍楼', '其他'];
     var type_array = ['类型', '卡', '包', '书', '电子产品', '伞', '其他'];
@@ -95,9 +89,6 @@ Page({
     var tempFilePaths = test
     //向搜索后端服务器发起请求
     wx.uploadFile({
-
-      //URL
-      //url: 'https://white.xmutsec.com/test/insert.php?name=' + name + '&desc=' + desc + '&time=' + time + '&type=' + type + '&addr=' + addr + '&coninfo=' + coninfo,
       url: 'https://white.xmutsec.com/test/insert.php',
       //method: "POST",
       filePath: tempFilePaths[0],
@@ -109,14 +100,8 @@ Page({
         type: type,
         addr: addr,
         coninfo: coninfo,
-        
+
       },
-      
-/*    
-      success: function (res) {
-        //打印
-        console.log(res.data)
-      },*/
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
