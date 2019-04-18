@@ -1,0 +1,12 @@
+/* pages/test.wxss */
+
+@import "../index/index.wxss";
+.test-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.test-logo {
+    width: 100%;
+    height: 130rpx;
+}

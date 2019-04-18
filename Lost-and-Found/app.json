@@ -1,9 +1,0 @@
-{
-  "pages": [
-    "pages/index/index",
-    "pages/add/add"
-  ],
-  "window": {
-    "navigationStyle": "custom"
-  }
-}

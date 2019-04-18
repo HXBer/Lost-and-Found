@@ -1,0 +1,121 @@
+@import "../../lib/weui.wxss";
+.index-top {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.index-logo {
+  width: 100%;
+  height: 130rpx;
+}
+
+.index-row {
+  display: flex;
+  flex-direction: row
+}
+
+.search-arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+
+/*搜索框样式*/
+
+.search {
+  width: 97%;
+}
+
+.search-cion {
+  margin: 12rpx 12rpx 12rpx 12rpx;
+  position: absolute;
+  left: 25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.search-arr input {
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+
+/*输入定位*/
+
+.index-top-plus {
+  display: flex;
+}
+
+.picker {
+  padding: 19rpx 26rpx;
+  background-color: #FFFFFF;
+}
+
+.sort-size {
+  margin: 20rpx -7rpx 0rpx 0rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #555;
+}
+
+.time-size {
+  margin: 14rpx -7rpx 7rpx 12rpx;
+  font-size: 27rpx;
+  color: #555;
+}
+
+.choose-size {
+  font-size: 30rpx;
+  margin: 14rpx -7rpx 0rpx 0rpx;
+  text-align: center;
+  color: #555;
+}
+
+.search_result {
+  padding:50rpx 0rpx 150rpx 250rpx;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.lost-image {
+  padding: 20rpx 20rpx;
+}
+
+.lost-time {
+  margin: 3rem -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+
+.lost-addr {
+  margin: 10rpx -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+
+.lost-name {
+  padding: 15rpx;
+}
+
+.add {
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  bottom: 30px;
+  right: 20px;
+}
+.image-lost{
+  left: 0rpx;
+}
+.time-lost{
+  margin: 3rem -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+.addr-lost{
+  margin: 10rpx -7rpx 7rpx 12rpx;
+  font-size: 25rpx;
+}
+.name-lost{
+  padding: 15rpx;
+}

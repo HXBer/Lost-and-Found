@@ -1,0 +1,28 @@
+<!-- pages/test.wxml -->
+<view class='test_index'>
+  <view class='test-top'>
+    <image class='test-logo' src='../../image/logo.png'></image>
+    <view style='height:80rpx;background-color:#8f202e'>
+      <view bindtap='back'>
+        <!-- >后退按钮
+        < -->
+        <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
+      </view>
+    </view>
+  </view>
+  <view class='search_result' wx:for='{{re}}' wx:key='re' style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
+    <view style='display:flex;'>
+      <image src='https://white.xmutsec.com/upload/{{item.thing_photo}}' style='height:160rpx;width:160rpx' />
+      <view style='height:204rpx;width:330rpx;'>
+        <view style="padding: 0 0 0 60rpx;">{{item.thing_name}}</view>
+      </view>
+      <view style='font-size:13px;flex-direction: column;padding: 60rpx 0 0 0;'>
+        <view>■时间{{item.thing_time}}</view>
+        <view>■类型{{item.thing_type}}</view>
+        <view>■地点{{item.thing_addr}}</view>
+        <view>■描述{{item.thing_desc}}</view>
+        <view>■联系方式{{item.thing_coninfo}}</view>
+      </view>
+    </view>
+  </view>
+</view>
