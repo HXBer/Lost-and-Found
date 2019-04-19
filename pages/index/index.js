@@ -7,41 +7,27 @@ Page
   ({
     data: {
       date: '时间',
-      array: ['升序', '降序'],
-      data_n: 0,
+      pick_n: 0,
       addr_n: 0,
       type_n: 0,
+      pick_array: ['拾取', '丢失'],
       addr_array: ['位置', '教学楼', '精工园', '图书馆', '宿舍楼', '其他'],
       type_array: ['类型', '卡', '包', '书', '电子产品', '伞', '其他'],
       search_result: '',
     },
 
-    bindPickerChange: function (e) {
-      this.setData({
-        data_n: e.detail.value,
-        test2: e.detail.value
-      })
-    },
 
+    //时间选取
     bindDateChange: function (e) {
-      this.setData({
-        date: e.detail.value
-      })
-    },
-    bindAddrChange: function (e) {
-      test3 = e.detail.value
+      test1 = e.detail.value
       var that = this;
-      var addr_n = e.detail.value
+      var date = e.detail.value
       this.setData({
-        addr_n: addr_n
+        date: date
       })
-      if (addr_n != 0)
+      if (date != '时间')
         wx.request({
-          url: 'https://white.xmutsec.com/test/tag.php?test3=' + addr_n + '&test4=' + test4,
-          /*data: {
-            addr_n,
-            test4,
-          },*/
+          url: 'https://white.xmutsec.com/test/tag.php?test1=' + date + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + test4,
           header: {
             'Content-Type': 'application/json'
           },
@@ -62,7 +48,68 @@ Page
           }
         })
     },
-
+    //丢失&拾取
+    bindPickerChange: function (e) {
+      test2 = e.detail.value
+      var that = this;
+      var pick_n = e.detail.value
+      this.setData({
+        pick_n: pick_n
+      })
+      wx.request({
+        url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + pick_n + '&test3=' + test3 + '&test4=' + test4,
+        header: {
+          'Content-Type': 'application/json'
+        },
+        success: function (res) {
+          console.log(res.data)
+          if (res.data[0] != 'noresult') {
+            that.setData({
+              re: res.data
+            })
+          }
+          else {
+            wx.showToast({
+              title: '无结果',
+              icon: 'warn',
+              duration: 2000
+            })
+          }
+        }
+      })
+    },
+    //地址选择
+    bindAddrChange: function (e) {
+      test3 = e.detail.value
+      var that = this;
+      var addr_n = e.detail.value
+      this.setData({
+        addr_n: addr_n
+      })
+      if (addr_n != 0)
+        wx.request({
+          url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + addr_n + '&test4=' + test4,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          success: function (res) {
+            console.log(res.data)
+            if (res.data[0] != 'noresult') {
+              that.setData({
+                re: res.data
+              })
+            }
+            else {
+              wx.showToast({
+                title: '无结果',
+                icon: 'warn',
+                duration: 2000
+              })
+            }
+          }
+        })
+    },
+    //类型选择
     bindTypeChange: function (e) {
       test4 = e.detail.value
       var that = this
@@ -72,7 +119,7 @@ Page
       })
       if (type_n != 0)
         wx.request({
-          url: 'https://white.xmutsec.com/test/tag.php?test3=' + test3 + '&test4=' + type_n,
+          url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + type_n,
           /*data: {
             addr_n,
             test4,

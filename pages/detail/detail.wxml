@@ -17,7 +17,7 @@
         <view style="padding: 0 0 0 60rpx;">{{item.thing_name}}</view>
       </view>
       <view style='font-size:13px;flex-direction: column;padding: 60rpx 0 0 0;'>
-        <view>■时间{{item.thing_time}}</view>
+        <view>■时间{{item.thing_date}}</view>
         <view>■类型{{item.thing_type}}</view>
         <view>■地点{{item.thing_addr}}</view>
         <view>■描述{{item.thing_desc}}</view>
