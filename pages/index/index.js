@@ -1,5 +1,8 @@
 var app = getApp()
-var test
+var test1 = 0
+var test2 = 0
+var test3 = 0 //位置
+var test4 = 0 //类型
 Page
   ({
     data: {
@@ -15,7 +18,8 @@ Page
 
     bindPickerChange: function (e) {
       this.setData({
-        data_n: e.detail.value
+        data_n: e.detail.value,
+        test2: e.detail.value
       })
     },
 
@@ -25,6 +29,7 @@ Page
       })
     },
     bindAddrChange: function (e) {
+      test3 = e.detail.value
       var that = this;
       var addr_n = e.detail.value
       this.setData({
@@ -32,32 +37,73 @@ Page
       })
       if (addr_n != 0)
         wx.request({
-          url: 'https://white.xmutsec.com/test/addr.php?n=' + addr_n,
-          data: addr_n,
+          url: 'https://white.xmutsec.com/test/tag.php?test3=' + addr_n + '&test4=' + test4,
+          /*data: {
+            addr_n,
+            test4,
+          },*/
           header: {
             'Content-Type': 'application/json'
           },
           success: function (res) {
             console.log(res.data)
-            that.setData({
-              re: res.data,
-            })
-            wx.showToast({
-              title: '已提交',
-              icon: 'success',
-              duration: 2000
-            })
+            if (res.data[0] != 'noresult') {
+              that.setData({
+                re: res.data
+              })
+            }
+            else {
+              wx.showToast({
+                title: '无结果',
+                icon: 'warn',
+                duration: 2000
+              })
+            }
           }
         })
     },
 
     bindTypeChange: function (e) {
+      test4 = e.detail.value
+      var that = this
+      var type_n = e.detail.value
       this.setData({
-        type_n: e.detail.value
+        type_n: type_n
       })
+      if (type_n != 0)
+        wx.request({
+          url: 'https://white.xmutsec.com/test/tag.php?test3=' + test3 + '&test4=' + type_n,
+          /*data: {
+            addr_n,
+            test4,
+          },*/
+          header: {
+            'Content-Type': 'application/json'
+          },
+          success: function (res) {
+            console.log(res.data)
+            if (res.data[0] != 'noresult') {
+              that.setData({
+                re: res.data
+              })
+            }
+            else {
+              wx.showToast({
+                title: '无结果',
+                icon: 'warn',
+                duration: 2000
+              })
+            }
+
+          }
+        })
     },
 
     onLoad: function () {
+      //test1 = 0;
+      //test2 = 0;
+      //test3 = 0;
+      //test4 = 0;
       // 调用函数时，传入new Date()参数，返回值是日期
       var time = formatTime(new Date());
       // 再通过setData更改Page()里面的data，动态更新页面的数据
@@ -80,14 +126,18 @@ Page
         },
         success: function (res) {
           console.log(res.data)
-          that.setData({
-            re: res.data,
-          })
-          wx.showToast({
-            title: '已提交',
-            icon: 'success',
-            duration: 2000
-          })
+          if (res.data[0] != 'noresult') {
+            that.setData({
+              re: res.data
+            })
+          }
+          else {
+            wx.showToast({
+              title: '无结果',
+              icon: 'warn',
+              duration: 2000
+            })
+          }
         }
       })
     },

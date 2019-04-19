@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/add/add",
-    "pages/test/test"
+    "pages/detail/detail"
   ],
   "window": {
     "navigationStyle": "custom"

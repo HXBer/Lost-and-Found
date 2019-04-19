@@ -13,7 +13,7 @@ Page({
       })
     wx.request
       ({
-        url: 'https://white.xmutsec.com/test/test.php?thing_id=' + formData,
+        url: 'https://white.xmutsec.com/test/detail.php?thing_id=' + formData,
         data: formData,
         header: { 'Content-Type': 'application/json' },
         success: function (res) {
