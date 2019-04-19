@@ -7,9 +7,11 @@ Page({
     date: '时间',
     addr_n: 0,
     type_n: 0,
+    pick_n: 0,
     name: '',
     addr_array: ['位置', '教学楼', '精工园', '图书馆', '宿舍楼', '其他'],
     type_array: ['类型', '卡', '包', '书', '电子产品', '伞', '其他'],
+    pick_array: ['拾取', '丢失'],
     desc: '',
   },
 
@@ -25,7 +27,11 @@ Page({
       date: e.detail.value
     })
   },
-
+  bindPickChange: function (e) {
+    this.setData({
+      pick_n: e.detail.value
+    })
+  },
   bindAddrChange: function (e) {
     this.setData({
       addr_n: e.detail.value
@@ -37,15 +43,16 @@ Page({
       type_n: e.detail.value
     })
   },
-
-  onLoad: function () {
-    // 调用函数时，传入new Date()参数，返回值是日期
-    var time = formatTime(new Date());
-    // 再通过setData更改Page()里面的data，动态更新页面的数据
-    this.setData({
-      time: time
-    });
-  },
+  /*
+    onLoad: function () {
+      // 调用函数时，传入new Date()参数，返回值是日期
+      var time = formatTime(new Date());
+      // 再通过setData更改Page()里面的data，动态更新页面的数据
+      this.setData({
+        time: time
+      });
+    },
+  */
 
 
 
@@ -57,10 +64,11 @@ Page({
     var type_array = ['类型', '卡', '包', '书', '电子产品', '伞', '其他'];
     var name = e.detail.value.name;
     var desc = e.detail.value.desc;
-    var time = e.detail.value.time;
+    var date = e.detail.value.date;
+    var pick = e.detail.value.pick
+    var coninfo = e.detail.value.coninfo;
     var type = type_array[e.detail.value.type];
     var addr = addr_array[e.detail.value.addr];
-    var coninfo = e.detail.value.coninfo;
     //显示搜索中的提示
     wx.showLoading({
       title: '搜索中',
@@ -75,8 +83,9 @@ Page({
       name: 'file',
       formData: {
         name: name,
+        pick: pick,
         desc: desc,
-        time: time,
+        date: date,
         type: type,
         addr: addr,
         coninfo: coninfo,

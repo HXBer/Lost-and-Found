@@ -26,7 +26,7 @@
   display: flex;
   text-align: center;
   font-size: 40rpx;
-  margin: 50rpx 0rpx 0rpx 100rpx;
+  margin: 40rpx 0rpx 0rpx 100rpx;
   height: 64rpx;
 }
 
@@ -52,26 +52,26 @@ button::after {
 .photo-add {
   width: 110rpx;
   height: 110rpx;
-  margin: 150rpx 0rpx 0rpx 100rpx;
+  margin: 180rpx 0rpx 0rpx 100rpx;
 }
 
 .add-left {
   text-align: left;
   left: 0;
-  width: 160rpx;
+  width: 180rpx;
   height: 64rpx;
 }
 
 .add-right {
-  font-size:15px;
+  font-size: 15px;
   color: darkgrey;
-  right:0rpx;
-  width:440rpx;
-  height:64rpx
+  right: 0rpx;
+  width: 440rpx;
+  height: 64rpx
 }
-.test
-{
-  left:30rpx;
+
+.test {
+  left: 30rpx;
   width: 400rpx;
   height: 192rpx;
 }

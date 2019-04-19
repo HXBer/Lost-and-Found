@@ -1,12 +1,215 @@
 /* pages/test.wxss */
 
-@import "../index/index.wxss";
+/*@import "../index/index.wxss";*/
+
 .detail-top {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-logo {
-    width: 100%;
-    height: 130rpx;
+  width: 100%;
+  height: 130rpx;
+}
+
+.search_result {
+  padding: 50rpx 0rpx 150rpx 250rpx;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 基础样式 */
+
+view, scroll-view, swiper, swiper-item, icon, text, progress, button, checkbox-group, checkbox, form, input, label, picker, radio-group, radio, slider, switch, action-sheet, action-sheet-item, action-sheet-cancel, modal, toast, loading, navigator, audio, image, video, map, canvas {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+page {
+  height: 100%;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+checkbox-group, radio-group {
+  display: block;
+}
+
+:before, :after, ::before, ::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.c-minheight {
+  min-height: 80px;
+}
+
+.c-full {
+  width: 100%;
+  height: 100%;
+}
+
+.c-block {
+  display: block;
+}
+
+.c-autosize {
+  width: auto;
+  height: auto;
+}
+
+.c-fullwidth {
+  width: 100%;
+}
+
+.c-fullheight {
+  height: 100%;
+}
+
+.c-initHide {
+  opacity: 0 !important;
+}
+
+.c-ellipse {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 自定义样式 */
+
+.wx-image_ssRvyY {
+  display: inline-block;
+  margin: 25px 0px 17px;
+  padding-left: 0px;
+  width: 280px;
+  height: 250px;
+}
+
+.wx-view_top {
+  text-align: center;
+}
+
+.wx-view_KjPESP {
+  background-repeat: repeat;
+  background-color: rgb(233, 230, 230);
+  margin-right: 30px;
+  border-style: none;
+  display: block;
+  margin-left: 30px;
+  border-radius: 8px;
+  border-width: 0px;
+  border-color: rgb(221, 220, 220);
+  box-shadow: rgb(208, 207, 207) 5px 6px 0px 1px;
+  text-align: center;
+  font-weight: 500;
+  position: static;
+  padding-bottom: 25px;
+  float: left;
+  width: 315px;
+}
+
+.wx-view_item {
+  display: inline;
+  font-size: 13px;
+  font-family: verdana, geneva;
+  font-weight: 100;
+  line-height: 1.7em;
+  float: none;
+  position: static;
+  margin-left: 0px;
+  margin-right: auto;
+  justify-content: flex-start;
+  font-style: normal;
+  text-indent: 2px;
+  width: 2px;
+  color: #5e5555;
+}
+
+.wx-view_title {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 15px;
+  font-size: 17px;
+  margin-bottom: 0px;
+  min-height: 30px;
+  font-weight: 600;
+  color: rgb(191, 83, 83);
+}
+
+.wx-view_b {
+  display: block;
+  float: none;
+  position: static;
+  text-align: left;
+  clear: none;
+  overflow: visible;
+  min-height: 15px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.wx-view_XqLid0 {
+  display: inline;
+}
+
+.wx-view_u {
+  display: inline;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.7em;
+  font-family: verdana, geneva;
+}
+
+.wx-view_a {
+  float: none;
+  display: block;
+  margin-right: auto;
+  min-height: 30px;
+  margin-left: 25px;
+  padding-right: 20px;
+}
+
+.wx-text_line {
+  font-weight: 100;
+  font-size: 13px;
+  padding-bottom: 7px;
+  margin-top: -5px;
+  color: rgb(192, 192, 192);
+}
+
+.wx-view_nMVszk {
+  display: inline;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.7em;
+  font-family: verdana, geneva;
+}
+
+.details {
+  background-color: rgb(231, 230, 230);
+  margin-left: 25px;
+  text-align: center;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  box-shadow: 7px 7px 0px 0px rgba(218, 218, 218, 1);
+  -ms-box-shadow: 7px 7px 0px 0px rgba(218, 218, 218, 1);
+  -o-box-shadow: 7px 7px 0px 0px rgba(218, 218, 218, 1);
+  -moz-box-shadow: 7px 7px 0px 0px rgba(218, 218, 218, 1);
+  -webkit-box-shadow: 7px 7px 0px 0px rgba(218, 218, 218, 1);
+}
+
+.wx-image_images {
+  margin: 25px 0px;
+  padding-left: 0px;
+  width: 280px;
+  height: 230px;
 }

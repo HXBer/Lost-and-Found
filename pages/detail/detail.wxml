@@ -1,11 +1,8 @@
-<!-- pages/test.wxml -->
-<view class='test_index'>
-  <view class='test-top'>
-    <image class='test-logo' src='../../image/logo.png'></image>
+<!-- <view class='detail-index'>
+  <view class='detail-top'>
+    <image class='detail-logo' src='../../image/logo.png'></image>
     <view style='height:80rpx;background-color:#8f202e'>
       <view bindtap='back'>
-        <!-- >后退按钮
-        < -->
         <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
       </view>
     </view>
@@ -22,6 +19,53 @@
         <view>■地点{{item.thing_addr}}</view>
         <view>■描述{{item.thing_desc}}</view>
         <view>■联系方式{{item.thing_coninfo}}</view>
+      </view>
+    </view>
+  </view>
+</view> -->
+<view class='detail-top'>
+  <image class='detail-logo' src='../../image/logo.png'></image>
+  <view style='height:80rpx;background-color:#8f202e'>
+    <view bindtap='back'>
+      <image src='../../image/back.png' style='width:60rpx;height:60rpx'></image>
+    </view>
+  </view>
+</view>
+<view wx:for='{{re}}' wx:key='re'>
+  <view class="wx-view_top">
+    <image class="wx-image_images" mode="aspectFill" src="https://white.xmutsec.com/upload/{{item.thing_photo}}" style="background-size:   cover; background-position:   center center; background-repeat:   no-repeat; " />
+  </view>
+  <view class="details">
+    <view class="wx-view_title">{{item.thing_name}}</view>
+    <text class="c-block wx-text_line">_____________________________________</text>
+    <view class="wx-view_a">
+      <view class="wx-view_b" wx:if='{{item.pick==1}}'>
+        <view class="wx-view_item">○ 拾取时间 ：</view>
+        <view class="wx-view_u">{{item.thing_date}}</view>
+      </view>
+      <view class="wx-view_b" wx:if='{{item.pick===0}}'>
+        <view class="wx-view_item">○ 丢失时间 ：</view>
+        <view class="wx-view_u">{{item.thing_date}}</view>
+      </view>
+      <view class="wx-view_b">
+        <view class="wx-view_item">○ 物品类型 ：</view>
+        <view class="wx-view_nMVszk">{{item.thing_type}}</view>
+      </view>
+      <view class="wx-view_b" wx:if='{{item.pick==1}}'>
+        <view class="wx-view_item">○ 拾取地点 ：</view>
+        <view class="wx-view_nMVszk">{{item.thing_addr}}</view>
+      </view>
+      <view class="wx-view_b" wx:if='{{item.pick===0}}'>
+        <view class="wx-view_item">○ 丢失地点 ：</view>
+        <view class="wx-view_nMVszk">{{item.thing_addr}}</view>
+      </view>
+      <view class="wx-view_b">
+        <view class="wx-view_item">○ 联系方式 ：</view>
+        <view class="wx-view_nMVszk">{{item.thing_coninfo}}</view>
+      </view>
+      <view class="wx-view_b">
+        <view class="wx-view_item">○ 详细描述 ：</view>
+        <view class="wx-view_nMVszk">{{item.thing_desc}}</view>
       </view>
     </view>
   </view>

@@ -15,9 +15,16 @@
       <input class='add-right' name='name' placeholder='输入物品' placeholder-style='color: darkgrey;font-size:15px' confirm-type='done'></input>
     </view>
     <view class='mid'>
+      <view class='add-left'>拾取/丢失</view>
+      <picker bindchange='bindPickChange' name='pick' value='{{pick_n}}' range='{{pick_array}}'>
+        <view class='add-right'>{{pick_array[pick_n]}}</view>
+      </picker>
+    </view>
+    <view class='mid'>
       <view class='add-left'>时间</view>
-      <picker bindchange='bindDateChange' mode='date' name='time' value='{{date}}' start='2017-09-1' end='2018-9-1'>
-        <view class='time-size' class='add-right'>{{date}}</view><!--修改-->
+      <picker bindchange='bindDateChange' mode='date' name='date' value='{{date}}' start='2019-1-1' end='2020-1-1'>
+        <view class='time-size' class='add-right'>{{date}}</view>
+        <!--修改-->
       </picker>
     </view>
     <view class='mid'>
@@ -28,7 +35,7 @@
     </view>
     <view class='mid'>
       <view class='add-left'>物品类型</view>
-      <picker  style='left:130rpx;' bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
+      <picker style='left:130rpx;' bindchange='bindTypeChange' name='type' value='{{type_n}}' range='{{type_array}}'>
         <view class='add-right'>{{type_array[type_n]}}</view>
       </picker>
     </view>
@@ -37,12 +44,12 @@
       <input style='width:440rpx;height:64rpx;' placeholder-style='color: darkgrey;font-size:15px' name='coninfo' maxlength='15' placeholder='输入联系方式' confirm-type='done'></input>
     </view>
     <view class='mid'>
-      <view class='add-l  eft'>详细描述</view>
-      <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30'  placeholder='输入详细描述' confirm-type='done'></textarea>
+      <view class='add-left'>详细描述</view>
+      <textarea class='test' placeholder-style='color: darkgrey;font-size:15px' name='desc' maxlength='30' placeholder='输入详细描述' confirm-type='done'></textarea>
     </view>
     <!-- 上传图片 -->
     <button style="background-image:url(../../image/photo_add.png);" class='photo-add' type="default" bindtap="imgPicker"></button>
-    <image src='{{img}}' style='position:fixed;top:1000rpx;left:300rpx;width:150rpx; height:150rpx' />
+    <image src='{{img}}' style='position:fixed;top:1100rpx;left:300rpx;width:150rpx; height:150rpx' />
     <!-- 提交 -->
     <view class='add-bot' style='background-color:#FFFFFF'>
       <image class='submit-cion' src='../../image/submit.png'></image>
