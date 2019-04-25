@@ -1,7 +1,7 @@
 // pages/add/add.js
 const app = getApp()
-var test
-
+var test = 0
+var imgaddr = null
 Page({
   data: {
     date: '时间',
@@ -74,59 +74,91 @@ Page({
       title: '搜索中',
       icon: 'loading'
     })
-    var tempFilePaths = test
-    //向搜索后端服务器发起请求
-    wx.uploadFile({
-      url: 'https://white.xmutsec.com/test/insert.php',
-      //method: "POST",
-      filePath: tempFilePaths[0],
-      name: 'file',
-      formData: {
-        name: name,
-        pick: pick,
-        desc: desc,
-        date: date,
-        type: type,
-        addr: addr,
-        coninfo: coninfo,
+    if (!test) {
+      wx.request({
+        url: 'https://white.xmutsec.com/test/insert.php',
+        method: 'post',
+        data: {
+          name: name,
+          pick: pick,
+          desc: desc,
+          date: date,
+          type: type,
+          addr: addr,
+          coninfo: coninfo,
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
 
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
+          //控制台打印（开发调试用）
 
-      //请求成功
-      success: function (res) {
 
-        //控制台打印（开发调试用）
-        console.log(res.data)
+          //把所有结果存进一个名为re的数组
+          that.setData({
+            re: res.data,
+          })
+          console.log(res.data)
+          //搜索成功后，隐藏搜索中的提示
+          wx.hideLoading();
+        }
+      })
+    }
+    else {
+      wx.uploadFile({
+        url: 'https://white.xmutsec.com/test/insert.php',
+        //method: "POST",
+        filePath: imgaddr,
+        name: 'file',
+        formData: {
+          name: name,
+          pick: pick,
+          desc: desc,
+          date: date,
+          type: type,
+          addr: addr,
+          coninfo: coninfo,
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
 
-        //把所有结果存进一个名为re的数组
-        that.setData({
-          re: res.data,
-        })
+        //请求成功
+        success: function (res) {
+          //把所有结果存进一个名为re的数组
+          that.setData({
+            re: res.data,
+          })
+          //控制台打印（开发调试用）
+          console.log(res.data)
 
-        //搜索成功后，隐藏搜索中的提示
-        wx.hideLoading();
-      }
-    })
 
+
+          //搜索成功后，隐藏搜索中的提示
+          wx.hideLoading();
+        }
+      })
+    }
 
   },
 
+
   imgPicker: function () {
     var that = this;
+    imgaddr = null;
     wx.chooseImage({ //从本地相册选择图片或使用相机拍照
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
-        //console.log(res)
+        console.log(res)
         //前台显示
         that.setData({
           img: res.tempFilePaths //返回前台{{img}}
         })
-        test = res.tempFilePaths;
+        test = 1
+        imgaddr = res.tempFilePaths[0];
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
 
       },
