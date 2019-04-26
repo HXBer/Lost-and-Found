@@ -2,19 +2,14 @@
 var test
 Page({
   onLoad: function (options) {
+    var that = this
     var thing_id = options.thing_id
+    var thing_pick = options.thing_pick
     console.log(thing_id)
-    test = thing_id
-    var that = this;
-    var formData = test;
-    this.setData
-      ({
-        thing_id: formData,
-      })
+    console.log(thing_pick)
     wx.request
       ({
-        url: 'https://white.xmutsec.com/test/detail.php?thing_id=' + formData,
-        data: formData,
+        url: 'https://white.xmutsec.com/test/detail.php?thing_id=' + thing_id + '&thing_pick=' + thing_pick,
         header: { 'Content-Type': 'application/json' },
         success: function (res) {
           console.log(res.data)

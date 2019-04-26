@@ -132,11 +132,12 @@ Page({
           })
           //控制台打印（开发调试用）
           console.log(res.data)
-
-
-
-          //搜索成功后，隐藏搜索中的提示
-          wx.hideLoading();
+          test = 0
+          wx.showToast({
+            title: '上传成功',
+            icon: 'success',
+            duration: 2000
+          })
         }
       })
     }

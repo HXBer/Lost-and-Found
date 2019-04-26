@@ -47,7 +47,7 @@
   <!-- mid -->
   <view style='display:flex; position:relative; width:100%; height:1050rpx; top:290rpx'>
     <scroll-view class='index-mid' scroll-y='true' scroll-top='400'>
-      <navigator class='search_result' wx:for='{{re}}' wx:key='re' url="../detail/detail?thing_id={{item.thing_id}}" style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
+      <navigator class='search_result' wx:for='{{re}}' wx:key='re' url="../detail/detail?thing_id={{item.thing_id}}&thing_pick={{item.pick}}" style='position:relative;left:-200rpx; width:100%; height:200rpx;'>
         <view style='display:flex;  flex-direction: row;background-color:#dbdbdb;width:85%;height:340rpx'>
           <image src='https://white.xmutsec.com/upload/{{item.thing_photo}}' style='height:340rpx;width:340rpx' />
           <view style='height:auto;width:auto'>

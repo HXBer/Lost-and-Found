@@ -147,16 +147,13 @@ Page
     },
 
     onLoad: function () {
-      //test1 = 0;
-      //test2 = 0;
-      //test3 = 0;
-      //test4 = 0;
       // 调用函数时，传入new Date()参数，返回值是日期
       var time = formatTime(new Date());
       // 再通过setData更改Page()里面的data，动态更新页面的数据
       this.setData({
         time: time
       });
+      
     },
 
     formSubmit: function (e) {

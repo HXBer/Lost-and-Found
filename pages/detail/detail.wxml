@@ -39,11 +39,11 @@
     <view class="wx-view_title">{{item.thing_name}}</view>
     <text class="c-block wx-text_line">_____________________________________</text>
     <view class="wx-view_a">
-      <view class="wx-view_b" wx:if='{{item.pick===1}}'>
+      <view class="wx-view_b" wx:if='{{item.pick==1}}'>
         <view class="wx-view_item">○ 拾取时间 ：</view>
         <view class="wx-view_u">{{item.thing_date}}</view>
       </view>
-      <view class="wx-view_b" wx:if='{{item.pick===0}}'>
+      <view class="wx-view_b" wx:if='{{item.pick==0}}'>
         <view class="wx-view_item">○ 丢失时间 ：</view>
         <view class="wx-view_u">{{item.thing_date}}</view>
       </view>
@@ -51,11 +51,11 @@
         <view class="wx-view_item">○ 物品类型 ：</view>
         <view class="wx-view_nMVszk">{{item.thing_type}}</view>
       </view>
-      <view class="wx-view_b" wx:if='{{item.pick===1}}'>
+      <view class="wx-view_b" wx:if='{{item.pick==1}}'>
         <view class="wx-view_item">○ 拾取地点 ：</view>
         <view class="wx-view_nMVszk">{{item.thing_addr}}</view>
       </view>
-      <view class="wx-view_b" wx:if='{{item.pick===0}}'>
+      <view class="wx-view_b" wx:if='{{item.pick==0}}'>
         <view class="wx-view_item">○ 丢失地点 ：</view>
         <view class="wx-view_nMVszk">{{item.thing_addr}}</view>
       </view>
