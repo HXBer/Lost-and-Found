@@ -17,12 +17,13 @@ Page({
             ({
               re: res.data,
             })
+            /*
           wx.showToast
             ({
               title: 'ok',
               icon: 'success',
               duration: 2000
-            })
+            })*/
         }
       })
   },

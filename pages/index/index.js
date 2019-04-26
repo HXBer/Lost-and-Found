@@ -15,7 +15,30 @@ Page
       type_array: ['类型', '卡', '包', '书', '电子产品', '伞', '其他'],
       search_result: '',
     },
-
+    onShow() {
+      var that = this;
+      wx.request({
+        url: 'https://white.xmutsec.com/test/select.php',
+        header: {
+          'Content-Type': 'application/json'
+        },
+        success: function (res) {
+          console.log(res.data)
+          if (res.data[0] != 'noresult') {
+            that.setData({
+              re: res.data
+            })
+          }
+          else {
+            wx.showToast({
+              title: '无结果',
+              icon: 'warn',
+              duration: 2000
+            })
+          }
+        }
+      })
+    },
 
     //时间选取
     bindDateChange: function (e) {
@@ -153,7 +176,7 @@ Page
       this.setData({
         time: time
       });
-      
+
     },
 
     formSubmit: function (e) {

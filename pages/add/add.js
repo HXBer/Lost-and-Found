@@ -15,12 +15,7 @@ Page({
     desc: '',
   },
 
-  back: function () {
-    wx.navigateBack()
-    {
-      delta: 1;
-    }
-  },
+
 
   bindDateChange: function (e) {
     this.setData({
@@ -70,10 +65,6 @@ Page({
     var type = type_array[e.detail.value.type];
     var addr = addr_array[e.detail.value.addr];
     //显示搜索中的提示
-    wx.showLoading({
-      title: '搜索中',
-      icon: 'loading'
-    })
     if (!test) {
       wx.request({
         url: 'https://white.xmutsec.com/test/insert.php',
@@ -99,9 +90,19 @@ Page({
           that.setData({
             re: res.data,
           })
-          console.log(res.data)
-          //搜索成功后，隐藏搜索中的提示
-          wx.hideLoading();
+          //console.log(res.data)
+          wx.showToast({
+            title: '上传成功',
+            icon: 'success',
+            duration: 2000
+          })
+          setTimeout(function () {
+            //要延时执行的代码
+            wx.navigateBack()
+            {
+              delta: 1;
+            }
+          }, 2000) //延迟时间
         }
       })
     }
@@ -138,6 +139,14 @@ Page({
             icon: 'success',
             duration: 2000
           })
+          setTimeout(function () {
+            //要延时执行的代码
+            wx.navigateBack()
+            {
+              delta: 1;
+            }
+          }, 2000) //延迟时间
+
         }
       })
     }
@@ -166,6 +175,12 @@ Page({
 
     })
   },
+  back: function () {
+    wx.navigateBack()
+    {
+      delta: 1;
+    }
+  }
 })
 
 
