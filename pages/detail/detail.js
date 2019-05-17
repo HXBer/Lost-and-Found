@@ -9,7 +9,7 @@ Page({
     console.log(thing_pick)
     wx.request
       ({
-        url: 'https://white.xmutsec.com/test/detail.php?thing_id=' + thing_id + '&thing_pick=' + thing_pick,
+        url: 'https://17shangzhi.club/LostAndFound/detail.php?thing_id=' + thing_id + '&thing_pick=' + thing_pick,
         header: { 'Content-Type': 'application/json' },
         success: function (res) {
           console.log(res.data)

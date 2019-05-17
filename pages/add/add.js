@@ -67,7 +67,7 @@ Page({
     //显示搜索中的提示
     if (!test) {
       wx.request({
-        url: 'https://white.xmutsec.com/test/insert.php',
+        url: 'https://17shangzhi.club/LostAndFound/insert.php',
         method: 'post',
         data: {
           name: name,
@@ -108,7 +108,7 @@ Page({
     }
     else {
       wx.uploadFile({
-        url: 'https://white.xmutsec.com/test/insert.php',
+        url: 'https://17shangzhi.club/LostAndFound/insert.php',
         //method: "POST",
         filePath: imgaddr,
         name: 'file',

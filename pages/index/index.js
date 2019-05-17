@@ -18,7 +18,7 @@ Page
     onShow() {
       var that = this;
       wx.request({
-        url: 'https://white.xmutsec.com/test/select.php',
+        url: 'https://17shangzhi.club/LostAndFound/select.php',
         header: {
           'Content-Type': 'application/json'
         },
@@ -50,7 +50,7 @@ Page
       })
       if (date != '时间')
         wx.request({
-          url: 'https://white.xmutsec.com/test/tag.php?test1=' + date + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + test4,
+          url: 'https://17shangzhi.club/LostAndFound/tag.php?test1=' + date + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + test4,
           header: {
             'Content-Type': 'application/json'
           },
@@ -80,7 +80,7 @@ Page
         pick_n: pick_n
       })
       wx.request({
-        url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + pick_n + '&test3=' + test3 + '&test4=' + test4,
+        url: 'https://17shangzhi.club/LostAndFound/tag.php?test1=' + test1 + '&test2=' + pick_n + '&test3=' + test3 + '&test4=' + test4,
         header: {
           'Content-Type': 'application/json'
         },
@@ -111,7 +111,7 @@ Page
       })
       if (addr_n != 0)
         wx.request({
-          url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + addr_n + '&test4=' + test4,
+          url: 'https://17shangzhi.club/LostAndFound/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + addr_n + '&test4=' + test4,
           header: {
             'Content-Type': 'application/json'
           },
@@ -142,7 +142,7 @@ Page
       })
       if (type_n != 0)
         wx.request({
-          url: 'https://white.xmutsec.com/test/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + type_n,
+          url: 'https://17shangzhi.club/LostAndFound/tag.php?test1=' + test1 + '&test2=' + test2 + '&test3=' + test3 + '&test4=' + type_n,
           /*data: {
             addr_n,
             test4,
@@ -186,7 +186,7 @@ Page
         keyword: formData,
       })
       wx.request({
-        url: 'https://white.xmutsec.com/test/select.php?keyword=' + formData,
+        url: 'https://17shangzhi.club/LostAndFound/select.php?keyword=' + formData,
         data: formData,
         header: {
           'Content-Type': 'application/json'

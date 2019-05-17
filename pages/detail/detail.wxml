@@ -33,7 +33,7 @@
 </view>
 <view wx:for='{{re}}' wx:key='re'>
   <view class="wx-view_top">
-    <image class="wx-image_images" mode="aspectFill" src="https://white.xmutsec.com/upload/{{item.thing_photo}}" style="background-size:   cover; background-position:   center center; background-repeat:   no-repeat; " />
+    <image class="wx-image_images" mode="aspectFill" src="https://17shangzhi.club/upload/{{item.thing_photo}}" style="background-size:   cover; background-position:   center center; background-repeat:   no-repeat; " />
   </view>
   <view class="details">
     <view class="wx-view_title">{{item.thing_name}}</view>
